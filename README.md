@@ -1,4 +1,4 @@
-# Dina Abdelaziz El-naggar - Portfolio Website
+# Samuel Gerges- Portfolio Website
 
 A modern, responsive portfolio website showcasing my skills, experience, and projects as a Full Stack Developer.
 
@@ -96,11 +96,11 @@ The website is easily customizable:
 
 ## 📞 Contact
 
-- **Email**: dinaabdelaziz514@gmail.com
-- **Phone**: +201113770021
-- **Location**: New Cairo, Egypt
-- **LinkedIn**: [Dina Abdelaziz](https://linkedin.com/in/dinaabdelaziz)
-- **GitHub**: [dinaabdelaziz](https://github.com/dinaabdelaziz)
+- **Email**: samoulgerges00@gmail.com
+- **Phone**: +201143042965
+- **Location**: Cairo, Egypt
+- **LinkedIn**: [Samuel Gerges](https://www.linkedin.com/in/samuelgerges10)
+- **GitHub**: [SamuelGerges](https://github.com/SamuelGerges)
 
 ## 📄 License
 
@@ -108,4 +108,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-*Built with ❤️ by Dina Abdelaziz El-naggar*
+*Built with ❤️ by Samuel Gerges*
