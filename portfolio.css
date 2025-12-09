@@ -484,8 +484,15 @@ body {
     justify-content: center;
     margin: 0 auto;
     border: 3px solid rgba(255, 255, 255, 0.3);
-    font-size: 3rem;
-    color: white;
+    overflow: hidden;
+    position: relative;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .profile-info {
@@ -528,6 +535,53 @@ body {
 .social-link:hover {
     background: rgba(255, 255, 255, 0.25);
     transform: translateY(-3px) scale(1.1);
+}
+
+.btn-download-cv {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    width: 100%;
+    cursor: pointer;
+}
+
+.btn-download-cv:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-download-cv i {
+    font-size: 1rem;
+}
+
+.btn-download-cv span {
+    white-space: nowrap;
+}
+
+.btn-outline {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
 .scroll-indicator {
@@ -1145,6 +1199,13 @@ section {
     transform: translateY(-2px) scale(1.05);
 }
 
+.project-links {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .project-link {
     display: inline-flex;
     align-items: center;
@@ -1152,12 +1213,13 @@ section {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     transition: all 0.3s ease;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.2rem;
     border-radius: 8px;
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
+    white-space: nowrap;
 }
 
 .project-link:hover {
@@ -1165,7 +1227,12 @@ section {
     background: var(--primary-color);
     color: white;
     border-color: var(--primary-color);
-    transform: translateX(5px);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.project-link i {
+    font-size: 0.85rem;
 }
 
 /* ========================================
@@ -1636,6 +1703,11 @@ section {
     .project-footer {
         flex-direction: column;
         align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .project-links {
+        width: 100%;
     }
     
     .project-link {
