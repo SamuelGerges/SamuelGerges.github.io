@@ -29,6 +29,15 @@ function initializePortfolio() {
     
     // Initialize typing effect
     initTypingEffect();
+
+    // Initialize experience tabs
+    initExperienceTabs();
+
+    // Initialize project filters
+    initProjectFilters();
+
+    // Initialize skill tabs
+    initSkillTabs();
 }
 
 // ========================================
@@ -175,7 +184,7 @@ function initScrollEffects() {
 
     // Observe elements for fade in animation
     const animateElements = document.querySelectorAll(
-        '.skill-category, .project-card, .timeline-item, .education-card, .languages-card, .contact-item, .about-content, .highlight-item'
+        '.skills-tabs, .project-card, .experience-tabs, .education-summary-card, .contact-panel, .about-content, .highlight-item'
     );
 
     animateElements.forEach((el, index) => {
@@ -366,6 +375,135 @@ function initTypingEffect() {
 }
 
 // ========================================
+// EXPERIENCE TABS
+// ========================================
+function initExperienceTabs() {
+    const tabs = document.querySelectorAll('.experience-tab');
+    const panels = document.querySelectorAll('.experience-panel');
+
+    if (!tabs.length || !panels.length) {
+        return;
+    }
+
+    const activateExperience = (selectedTab) => {
+        const selectedExperience = selectedTab.getAttribute('data-experience');
+
+        tabs.forEach(tab => {
+            const isActive = tab === selectedTab;
+            tab.classList.toggle('active', isActive);
+            tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+
+        panels.forEach(panel => {
+            const isActive = panel.getAttribute('data-experience-panel') === selectedExperience;
+            panel.classList.toggle('active', isActive);
+            panel.hidden = !isActive;
+        });
+    };
+
+    tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => activateExperience(tab));
+
+        tab.addEventListener('keydown', (event) => {
+            if (!['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
+                return;
+            }
+
+            event.preventDefault();
+            const direction = event.key === 'ArrowUp' || event.key === 'ArrowLeft' ? -1 : 1;
+            const nextIndex = (index + direction + tabs.length) % tabs.length;
+            tabs[nextIndex].focus();
+            activateExperience(tabs[nextIndex]);
+        });
+    });
+}
+
+// ========================================
+// PROJECT FILTERS
+// ========================================
+function initProjectFilters() {
+    const filterButtons = document.querySelectorAll('.project-filter-btn');
+    const projectCards = document.querySelectorAll('.project-card[data-project-category]');
+
+    if (!filterButtons.length || !projectCards.length) {
+        return;
+    }
+
+    const applyProjectFilter = (selectedButton) => {
+        const selectedCategory = selectedButton.getAttribute('data-project-filter');
+
+        filterButtons.forEach(button => {
+            const isActive = button === selectedButton;
+            button.classList.toggle('active', isActive);
+            button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+
+        projectCards.forEach(card => {
+            const cardCategory = card.getAttribute('data-project-category');
+            const shouldShow = selectedCategory === 'all' || cardCategory === selectedCategory;
+
+            card.hidden = !shouldShow;
+
+            if (shouldShow) {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }
+        });
+    };
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => applyProjectFilter(button));
+    });
+
+    const activeButton = document.querySelector('.project-filter-btn.active') || filterButtons[0];
+    applyProjectFilter(activeButton);
+}
+
+// ========================================
+// SKILL TABS
+// ========================================
+function initSkillTabs() {
+    const tabs = document.querySelectorAll('.skill-tab');
+    const panels = document.querySelectorAll('.skills-panel');
+
+    if (!tabs.length || !panels.length) {
+        return;
+    }
+
+    const activateSkill = (selectedTab) => {
+        const selectedSkill = selectedTab.getAttribute('data-skill');
+
+        tabs.forEach(tab => {
+            const isActive = tab === selectedTab;
+            tab.classList.toggle('active', isActive);
+            tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+
+        panels.forEach(panel => {
+            const isActive = panel.getAttribute('data-skill-panel') === selectedSkill;
+            panel.classList.toggle('active', isActive);
+            panel.hidden = !isActive;
+        });
+    };
+
+    tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => activateSkill(tab));
+
+        tab.addEventListener('keydown', (event) => {
+            if (!['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
+                return;
+            }
+
+            event.preventDefault();
+            const direction = event.key === 'ArrowUp' || event.key === 'ArrowLeft' ? -1 : 1;
+            const nextIndex = (index + direction + tabs.length) % tabs.length;
+            tabs[nextIndex].focus();
+            activateSkill(tabs[nextIndex]);
+        });
+    });
+}
+
+// ========================================
 // SKILL ITEMS INTERACTION
 // ========================================
 document.querySelectorAll('.skill-item').forEach(item => {
@@ -376,28 +514,6 @@ document.querySelectorAll('.skill-item').forEach(item => {
     item.addEventListener('mouseleave', function() {
         this.style.transform = 'scale(1) translateY(0)';
     });
-});
-
-// ========================================
-// TIMELINE ANIMATION
-// ========================================
-const timelineItems = document.querySelectorAll('.timeline-item');
-const timelineObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-            setTimeout(() => {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateX(0)';
-            }, index * 200);
-        }
-    });
-}, { threshold: 0.2 });
-
-timelineItems.forEach(item => {
-    item.style.opacity = '0';
-    item.style.transform = 'translateX(-30px)';
-    item.style.transition = 'all 0.6s ease';
-    timelineObserver.observe(item);
 });
 
 // ========================================
@@ -503,4 +619,3 @@ document.body.insertBefore(skipLink, document.body.firstChild);
 console.log('%c👋 Hello!', 'font-size: 20px; font-weight: bold; color: #667eea;');
 console.log('%cThanks for checking out my portfolio!', 'font-size: 14px; color: #64748b;');
 console.log('%cFeel free to reach out if you\'d like to collaborate!', 'font-size: 12px; color: #64748b;');
-

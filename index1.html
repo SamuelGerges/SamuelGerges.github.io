@@ -3,33 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samuel Gerges - Full-Stack Developer</title>
+    <meta name="description" content="Samuel Gerges - Full-Stack Developer Portfolio. 3+ years of experience in building scalable web applications, ERP systems, and business platforms.">
+    <title>Samuel Gerges - Full-Stack Developer Portfolio</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <!-- Fallback favicon for older browsers -->
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='15' fill='%2393c5fd' stroke='%236b7280' stroke-width='1'/><text x='16' y='20' font-family='monospace' font-size='14' font-weight='bold' text-anchor='middle' fill='white'>&lt;/&gt;</text></svg>">
 
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="portfolio.css">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <p>Loading Portfolio...</p>
+        </div>
+    </div>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="#home">Samuel Gerges</a>
+                <a href="#home">
+                    <span class="logo-icon">&lt;/&gt;</span>
+                    <span class="logo-text">Samuel Gerges</span>
+                </a>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="hamburger">
+            <div class="hamburger" id="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -39,73 +56,161 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title"><span class="highlight">Samuel Gerges</span></h1>
-                <h2 class="hero-subtitle">Full-Stack Developer</h2>
+                <div class="hero-badge">
+                    <i class="fas fa-code"></i>
+                    <span>Full-Stack Developer</span>
+                </div>
+                <h1 class="hero-title">
+                    Hi, I'm <span class="title-name">Samuel Gerges</span>
+                </h1>
+                <div class="hero-subtitle-wrapper">
+                    <h2 class="hero-subtitle">Full-Stack & Backend Developer</h2>
+                </div>
                 <p class="hero-description">
-                    Full-stack and backend developer with over 3 years of experience building reliable,
-                    scalable web applications. Focused on solid backend architecture, clean APIs,
-                    and performant databases that serve real business needs.
+                    Full-Stack and Backend Developer with over <strong>3 years</strong> of experience designing and implementing 
+                    reliable, scalable web applications. Skilled in building efficient backend systems, optimizing database 
+                    performance, and integrating third-party services. Focused on delivering maintainable solutions that meet 
+                    real business needs.
                 </p>
-
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View My Work</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>Get In Touch</span>
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="assets/cv/projects.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>View Projects</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/samuelgerges10" target="_blank" rel="noopener noreferrer" class="btn btn-icon" aria-label="LinkedIn" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/SamuelGerges" target="_blank" rel="noopener noreferrer" class="btn btn-icon" aria-label="GitHub" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="3">0</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="10">0</div>
+                        <div class="stat-label">Featured Projects</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="100">0</div>
+                        <div class="stat-label">% Project Ownership</div>
+                    </div>
                 </div>
             </div>
             <div class="hero-image">
                 <div class="profile-card">
+                    <div class="profile-gradient"></div>
                     <div class="profile-avatar">
-                        <i class="fas fa-user-circle"></i>
+                        <div class="avatar-circle">
+                            <img src="assets/images/samuel.jpg" alt="Samuel Gerges" class="profile-photo">
+                        </div>
                     </div>
                     <div class="profile-info">
                         <h3>Samuel Gerges</h3>
-                        <p>Full-Stack Developer</p>
+                        <p>Backend Software Engineer</p>
                         <div class="profile-links">
-                            <a href="https://www.linkedin.com/in/samuelgerges10" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-                            <a href="https://github.com/SamuelGerges" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/samuelgerges10" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn" title="LinkedIn Profile">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/SamuelGerges" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub" title="GitHub Profile">
+                                <i class="fab fa-github"></i>
+                            </a>
                         </div>
+                        <a href="assets/cv/Samuel_Gerges.pdf" target="_blank" rel="noopener noreferrer" class="btn-download-cv" type="application/pdf">
+                            <i class="fas fa-file-pdf"></i>
+                            <span>View CV</span>
+                        </a>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <div class="section-header">
+                <span class="section-tag">About Me</span>
+                <h2 class="section-title">Who I Am</h2>
+                <p class="section-subtitle">Building solutions that matter</p>
+            </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>
-                        I am a full-stack developer with over 3 years of experience building web applications
-                        for ERP systems, business platforms, and booking solutions. I work mainly with PHP,
-                        Laravel, and RESTful APIs, with a strong focus on database design and performance.
-                    </p>
-                    <p>
-                        I enjoy working closely with teams, understanding requirements, and turning them into
-                        stable and maintainable systems. I care about clear structure, clean code, and making
-                        sure each feature actually helps the people who use it.
-                    </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <h3>3+</h3>
-                            <p>Years Experience</p>
+                    <div class="about-intro">
+                        <p>
+                            I am a full-stack developer with over <strong>3 years</strong> of experience building web applications
+                            for ERP systems, business platforms, and booking solutions. I work mainly with <strong>PHP</strong>,
+                            <strong>Laravel</strong>, and <strong>RESTful APIs</strong>, with a strong focus on database design and performance.
+                        </p>
+                        <p>
+                            I enjoy working closely with teams, understanding requirements, and turning them into
+                            stable and maintainable systems. I care about clear structure, clean code, and making
+                            sure each feature actually helps the people who use it.
+                        </p>
+                    </div>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>Clean Code</h4>
+                                <p>Writing maintainable and scalable code following best practices</p>
+                            </div>
                         </div>
-                        <div class="stat">
-                            <h3>8+</h3>
-                            <p>Projects Delivered</p>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>Team Collaboration</h4>
+                                <p>Working effectively with cross-functional teams</p>
+                            </div>
                         </div>
-                        <div class="stat">
-                            <h3>100%</h3>
-                            <p>Project Ownership</p>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>Problem Solving</h4>
+                                <p>Finding creative solutions to complex challenges</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="about-image">
-                    <div class="image-placeholder">
-                        <i class="fas fa-code"></i>
+                <div class="about-visual">
+                    <div class="floating-card card-1">
+                        <i class="fas fa-server"></i>
+                        <span>Backend</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>Full-Stack</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <i class="fas fa-database"></i>
+                        <span>Database</span>
                     </div>
                 </div>
             </div>
@@ -115,10 +220,18 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="section-header">
+                <span class="section-tag">Skills & Technologies</span>
+                <h2 class="section-title">Technical Expertise</h2>
+                <p class="section-subtitle">Technologies I work with</p>
+            </div>
             <div class="skills-grid">
+                <!-- Programming Languages -->
                 <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                    <div class="skill-category-header">
+                        <div class="skill-icon"><i class="fas fa-code"></i></div>
+                        <h3>Programming Languages</h3>
+                    </div>
                     <div class="skill-items">
                         <span class="skill-item">PHP</span>
                         <span class="skill-item">JavaScript</span>
@@ -126,161 +239,309 @@
                     </div>
                 </div>
 
+                <!-- Backend Frameworks -->
                 <div class="skill-category">
-                    <h3><i class="fas fa-layer-group"></i> Frameworks & Platforms</h3>
+                    <div class="skill-category-header">
+                        <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
+                        <h3>Backend Frameworks</h3>
+                    </div>
                     <div class="skill-items">
                         <span class="skill-item">Laravel</span>
                         <span class="skill-item">Express.js</span>
+                        <span class="skill-item">NestJS (learning)</span>
                     </div>
                 </div>
 
+                <!-- Frontend -->
                 <div class="skill-category">
-                    <h3><i class="fas fa-palette"></i> Frontend</h3>
+                    <div class="skill-category-header">
+                        <div class="skill-icon"><i class="fas fa-palette"></i></div>
+                        <h3>Frontend</h3>
+                    </div>
                     <div class="skill-items">
                         <span class="skill-item">HTML5</span>
                         <span class="skill-item">CSS3</span>
-                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">JavaScript (DOM)</span>
                         <span class="skill-item">TypeScript</span>
                         <span class="skill-item">jQuery</span>
                         <span class="skill-item">AJAX</span>
                         <span class="skill-item">Bootstrap</span>
-                        <span class="skill-item">Blade Templating</span>
+                        <span class="skill-item">Blade Templates</span>
                     </div>
                 </div>
 
+                <!-- Databases & Storage -->
                 <div class="skill-category">
-                    <h3><i class="fas fa-database"></i> Databases & Storage</h3>
+                    <div class="skill-category-header">
+                        <div class="skill-icon"><i class="fas fa-database"></i></div>
+                        <h3>Databases & Storage</h3>
+                    </div>
                     <div class="skill-items">
-                        <span class="skill-item">SQL</span>
                         <span class="skill-item">MySQL</span>
-                        <span class="skill-item">SQL Server</span>
                         <span class="skill-item">PostgreSQL</span>
+                        <span class="skill-item">SQLite</span>
                         <span class="skill-item">MongoDB</span>
                         <span class="skill-item">Redis</span>
                     </div>
                 </div>
 
+                <!-- Performance & Optimization -->
                 <div class="skill-category">
-                    <h3><i class="fas fa-bolt"></i> Real-Time & Communication</h3>
+                    <div class="skill-category-header">
+                        <div class="skill-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        <h3>Performance & Optimization</h3>
+                    </div>
+                    <div class="skill-items">
+                        <span class="skill-item">Query Optimization</span>
+                        <span class="skill-item">Indexing</span>
+                        <span class="skill-item">Caching</span>
+                        <span class="skill-item">Queue Workers</span>
+                        <span class="skill-item">Task Scheduling</span>
+                    </div>
+                </div>
+
+                <!-- Microservices & Distributed Systems -->
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
+                        <h3>Microservices & Distributed Systems</h3>
+                    </div>
+                    <div class="skill-items">
+                        <span class="skill-item">Microservices (Concepts)</span>
+                        <span class="skill-item">Decoupled Architecture</span>
+                    </div>
+                </div>
+
+                <!-- Real-Time -->
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <div class="skill-icon"><i class="fas fa-bolt"></i></div>
+                        <h3>Real-Time Communication</h3>
+                    </div>
                     <div class="skill-items">
                         <span class="skill-item">WebSockets</span>
                         <span class="skill-item">Pusher</span>
                     </div>
                 </div>
 
+                <!-- APIs & Security -->
                 <div class="skill-category">
-                    <h3><i class="fas fa-shield-alt"></i> APIs & Security</h3>
+                    <div class="skill-category-header">
+                        <div class="skill-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>APIs & Security</h3>
+                    </div>
                     <div class="skill-items">
-                        <span class="skill-item">RESTful APIs</span>
-                        <span class="skill-item">JWT</span>
+                        <span class="skill-item">REST APIs</span>
+                        <span class="skill-item">JWT Authentication</span>
                         <span class="skill-item">OAuth 2.0</span>
-                        <span class="skill-item">API Rate Limiting</span>
+                        <span class="skill-item">Authorization</span>
+                        <span class="skill-item">API Documentation (Postman)</span>
                     </div>
                 </div>
 
+                <!-- Architecture & Concepts -->
                 <div class="skill-category">
-                    <h3><i class="fas fa-cogs"></i> Architecture & Patterns</h3>
+                    <div class="skill-category-header">
+                        <div class="skill-icon"><i class="fas fa-cogs"></i></div>
+                        <h3>Architecture & Patterns</h3>
+                    </div>
                     <div class="skill-items">
                         <span class="skill-item">OOP</span>
-                        <span class="skill-item">SOLID</span>
+                        <span class="skill-item">SOLID Principles</span>
                         <span class="skill-item">MVC</span>
                         <span class="skill-item">HMVC</span>
-                        <span class="skill-item">Adapter Pattern</span>
                         <span class="skill-item">Repository Pattern</span>
+                        <span class="skill-item">Adapter Pattern</span>
                         <span class="skill-item">Service Layer</span>
                         <span class="skill-item">Dependency Injection</span>
                     </div>
                 </div>
 
+                <!-- Testing -->
                 <div class="skill-category">
-                    <h3><i class="fas fa-cloud"></i> DevOps & CI/CD</h3>
+                    <div class="skill-category-header">
+                        <div class="skill-icon"><i class="fas fa-vial"></i></div>
+                        <h3>Testing</h3>
+                    </div>
+                    <div class="skill-items">
+                        <span class="skill-item">PHPUnit</span>
+                        <span class="skill-item">Jest</span>
+                        <span class="skill-item">Integration Testing</span>
+                    </div>
+                </div>
+
+                <!-- DevOps & CI/CD -->
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <div class="skill-icon"><i class="fas fa-cloud"></i></div>
+                        <h3>DevOps & CI/CD</h3>
+                    </div>
                     <div class="skill-items">
                         <span class="skill-item">Docker</span>
                         <span class="skill-item">GitHub Actions</span>
+                        <span class="skill-item">Linux</span>
+                        <span class="skill-item">Nginx</span>
                     </div>
                 </div>
 
+                <!-- Version Control -->
                 <div class="skill-category">
-                    <h3><i class="fas fa-briefcase"></i> Focus Areas</h3>
+                    <div class="skill-category-header">
+                        <div class="skill-icon"><i class="fas fa-code-branch"></i></div>
+                        <h3>Version Control</h3>
+                    </div>
                     <div class="skill-items">
-                        <span class="skill-item">ERP Systems</span>
-                        <span class="skill-item">API Development</span>
-                        <span class="skill-item">Business Websites</span>
-                        <span class="skill-item">Payment & Gateway Integration</span>
+                        <span class="skill-item">Git</span>
+                        <span class="skill-item">GitHub</span>
                     </div>
                 </div>
 
+                <!-- Agile -->
                 <div class="skill-category">
-                    <h3><i class="fas fa-users"></i> Soft Skills</h3>
+                    <div class="skill-category-header">
+                        <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
+                        <h3>Agile Methodologies</h3>
+                    </div>
+                    <div class="skill-items">
+                        <span class="skill-item">Trello</span>
+                        <span class="skill-item">Agile</span>
+                        <span class="skill-item">Scrum</span>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <div class="skill-icon"><i class="fas fa-users"></i></div>
+                        <h3>Soft Skills</h3>
+                    </div>
                     <div class="skill-items">
                         <span class="skill-item">Problem Solving</span>
                         <span class="skill-item">Communication</span>
+                        <span class="skill-item">Teamwork</span>
                         <span class="skill-item">Working Under Pressure</span>
                         <span class="skill-item">Decision Making</span>
-                        <span class="skill-item">Team Collaboration</span>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
     <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
-            <h2 class="section-title">Professional Experience</h2>
+            <div class="section-header">
+                <span class="section-tag">Experience</span>
+                <h2 class="section-title">Professional Journey</h2>
+                <p class="section-subtitle">Where I've worked and what I've accomplished</p>
+            </div>
             <div class="timeline">
-
                 <div class="timeline-item">
+                    <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <div class="timeline-header">
-                            <h3>Full-Stack Developer</h3>
-                            <span class="company">EEC Group, Egypt</span>
-                            <span class="period">July 2023 - Present</span>
-                            <span class="location">Onsite</span>
+                            <h3>Senior Backend Developer</h3>
+                            <div class="timeline-meta">
+                                <span class="company">LINRCO-Egypt, Egypt</span>
+                                <span class="period">Feb 2026 - Present</span>
+                                <span class="location badge">Onsite</span>
+                            </div>
                         </div>
                         <ul class="timeline-description">
-                            <li>Gathered and analyzed requirements with users and stakeholders, then translated them into clear backend workflows and features.</li>
-                            <li>Designed system architecture using patterns like Repository and Adapter, and improved database performance and query speed.</li>
-                            <li>Wrote and optimized complex SQL queries and Eloquent logic to keep reports accurate and fast.</li>
-                            <li>Led a small team, created tasks on Trello, reviewed code, and did pair programming when needed.</li>
+                            <li><i class="fas fa-check"></i>Design and build a custom ERP system tailored to company workflows, replacing reliance on SAP to better fit internal processes and employee services.</li>
+                            <li><i class="fas fa-check"></i>Design system architecture using HMVC structure and clean code principles, applying patterns such as Repository, Adapter, and Service Layer.</li>
+                            <li><i class="fas fa-check"></i>Develop REST APIs using Laravel to handle request workflows, validations, and data flow between ERP modules.</li>
+                            <li><i class="fas fa-check"></i>Implement complex business rules including multi-step approval workflows, role-based access control, and request lifecycle management.</li>
+                            <li><i class="fas fa-check"></i>Optimize MySQL queries, indexing, and Eloquent logic to improve performance and ensure data accuracy.</li>
+                            <li><i class="fas fa-check"></i>Work closely with Business Analysts, UI/UX, and frontend developers to convert user stories into backend logic and database structure.</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="timeline-item">
+                    <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <div class="timeline-header">
-                            <h3>Full-Stack Developer</h3>
-                            <span class="company">Adastra, Saudi Arabia</span>
-                            <span class="period">July 2022 - June 2023</span>
-                            <span class="location">Remote</span>
+                            <h3>Senior Backend Developer</h3>
+                            <div class="timeline-meta">
+                                <span class="company">CRUX, Canada</span>
+                                <span class="period">Oct 2025 - Mar 2026</span>
+                                <span class="location badge">Remote</span>
+                            </div>
                         </div>
                         <ul class="timeline-description">
-                            <li>Worked on Business Academy System features for courses, instructors, and student enrollment.</li>
-                            <li>Designed backend modules and structure using clean code and reusable patterns.</li>
-                            <li>Integrated SMS, payment gateways, and email notifications into the platform.</li>
-                            <li>Developed and maintained the company website (Setcco.com) and contributed to the backend of the Modern Invitations mobile app.</li>
-                            <li>Maintained database structure and queries for stable and responsive performance.</li>
+                            <li><i class="fas fa-check"></i>Built backend services for Bizgene platform with client/freelancer onboarding and admin approval workflow.</li>
+                            <li><i class="fas fa-check"></i>Implemented project lifecycle including opportunity posting, freelancer applications, and selection process.</li>
+                            <li><i class="fas fa-check"></i>Integrated payment gateways (Stripe, PayPal) handling transactions, callbacks, and validation.</li>
+                            <li><i class="fas fa-check"></i>Developed certification management with Credly integration for verification and expiration checks.</li>
+                            <li><i class="fas fa-check"></i>Optimized MySQL queries and API performance for better efficiency and data consistency.</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="timeline-item">
+                    <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <h3>Full-Stack Developer</h3>
-                            <span class="company">Abber Alamaal, Saudi Arabia</span>
-                            <span class="period">Jan 2022 – June 2022</span>
-                            <span class="location">Remote</span>
+                            <div class="timeline-meta">
+                                <span class="company">EEC Group, Egypt</span>
+                                <span class="period">July 2023 - Jan 2026</span>
+                                <span class="location badge">Onsite</span>
+                            </div>
                         </div>
                         <ul class="timeline-description">
-                            <li>Converted business requirements and Figma designs into a working booking backend and database schema.</li>
-                            <li>Built a web dashboard to manage bookings, users, and content, and exposed APIs for the mobile app.</li>
-                            <li>Implemented online and offline booking logic with validation and tracking for tour guides.</li>
+                            <li><i class="fas fa-check"></i>Build and maintain the company’s core ERP system, supporting operations, HR, CRM, purchasing, ware-houses, and invoicing.</li>
+                            <li><i class="fas fa-check"></i>Analyze business requirements and translate them into structured backend workﬂows and API-driven solutions.</li>
+                            <li><i class="fas fa-check"></i>Design scalable architecture using clean code principles and patterns such as Repository, Adapter, and Service Layer.</li>
+                            <li><i class="fas fa-check"></i>Optimize SQL queries, indexing, caching, and Eloquent logic to reduce load times and improve data accuracy.</li>
+                            <li><i class="fas fa-check"></i>Implement integrations with ETA, SMS gateways, and external APIs.</li>
+                            <li><i class="fas fa-check"></i>Lead a development team through task planning, code reviews, and pair programming to improve delivery quality.</li>
+                        </ul>
+                    </div>
+                </div>  
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Full-Stack Developer</h3>
+                            <div class="timeline-meta">
+                                <span class="company">Adastra, Saudi Arabia</span>
+                                <span class="period">July 2022 - June 2023</span>
+                                <span class="location badge">Remote</span>
+                            </div>
+                        </div>
+                        <ul class="timeline-description">
+                            <li><i class="fas fa-check"></i> Developed backend modules for the Business Academy System: courses, instructors, enrollment, payments, and access management.</li>
+                            <li><i class="fas fa-check"></i> Designed backend structure using clean code, repository pattern, adapter pattern, and modular service architecture.</li>
+                            <li><i class="fas fa-check"></i> Integrated SMS providers, payment gateways, email notiﬁcations, and external APIs.</li>
+                            <li><i class="fas fa-check"></i> Built and maintained the company website <a href="https://setcco.com" target="_blank">Setcco</a> and contributed to the backend of the Modern Invitation mobile app.</li>
+                            <li><i class="fas fa-check"></i> Improved reliability and performance through indexing, caching strategies, and optimized SQL queries.</li>
                         </ul>
                     </div>
                 </div>
 
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Full-Stack Developer</h3>
+                            <div class="timeline-meta">
+                                <span class="company">Abber Alamaal, Saudi Arabia</span>
+                                <span class="period">Jan 2022 – June 2022</span>
+                                <span class="location badge">Remote</span>
+                            </div>
+                        </div>
+                        <ul class="timeline-description">
+                            <li><i class="fas fa-check"></i> Converted business requirements and Figma UI into backend architecture and database structure for a tour booking system.</li>
+                            <li><i class="fas fa-check"></i> Developed dashboards for bookings, users, trip schedules, and content management.</li>
+                            <li><i class="fas fa-check"></i> Built REST APIs for mobile app integration with validation, business logic, and access rules.</li>
+                            <li><i class="fas fa-check"></i> Implemented online/oﬄine booking workﬂows with full tracking and state management.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -288,13 +549,28 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <div class="section-header">
+                <span class="section-tag">Projects</span>
+                <h2 class="section-title">Featured Work</h2>
+                <p class="section-subtitle">Projects I've built and delivered</p>
+            </div>
             <div class="projects-grid">
-
-                <div class="project-card">
+                <div class="project-card featured">
+                    <div class="project-image">
+                        <div class="project-overlay"></div>
+                        <div class="project-icon-large">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="project-badge">Featured</div>
+                    </div>
                     <div class="project-content">
-                        <h3><a href="https://eecgroup.online/erp/login" target="_blank" rel="noopener noreferrer">ERP System</a></h3>
-                        <p>
+                        <div class="project-header">
+                            <h3><a href="https://eecgroup.online/erp/login" target="_blank" rel="noopener noreferrer">ERP System</a></h3>
+                            <a href="https://eecgroup.online/erp/login" target="_blank" rel="noopener noreferrer" class="project-external-link" aria-label="Visit ERP System">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <p class="project-description">
                             Developed and improved a multilingual ERP system with modules for purchases,
                             HR, CRM, invoicing, warehouses, and fabrication orders. Added automation,
                             data handling, and approval flows to support daily operations.
@@ -308,20 +584,39 @@
                             <span class="feature">Dashboard Customization</span>
                             <span class="feature">REST APIs</span>
                         </div>
-                        <div class="project-tech">
-                            <span class="tech">PHP</span>
-                            <span class="tech">Laravel</span>
-                            <span class="tech">MySQL</span>
-                            <span class="tech">REST API</span>
-                            <span class="tech">HTML/CSS/JS</span>
+                        <div class="project-footer">
+                            <div class="project-tech">
+                                <span class="tech">PHP</span>
+                                <span class="tech">Laravel</span>
+                                <span class="tech">MySQL</span>
+                                <span class="tech">REST API</span>
+                                <span class="tech">HTML/CSS/JS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://eecgroup.online/erp/login" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Live Demo</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay"></div>
+                        <div class="project-icon-large">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                    </div>
                     <div class="project-content">
-                        <h3><a href="#" target="_blank">Galva-Max ERP System</a></h3>
-                        <p>
+                        <div class="project-header">
+                            <h3><a href="https://eecgroup.online/galva-max/login" target="_blank" rel="noopener noreferrer">Galva-Max ERP System</a></h3>
+                            <a href="https://eecgroup.online/galva-max/login" target="_blank" rel="noopener noreferrer" class="project-external-link" aria-label="Visit Galva-Max ERP">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <p class="project-description">
                             Built an ERP system for EEC Galva that links factory operations with financial workflows.
                             It records all galvanizing processes, tracks steel batches, monitors kettle activity,
                             and generates production reports. It also manages clients, purchase orders, invoices,
@@ -336,20 +631,39 @@
                             <span class="feature">Invoice Creation</span>
                             <span class="feature">Payments & Customer Balance</span>
                         </div>
-                        <div class="project-tech">
-                            <span class="tech">PHP</span>
-                            <span class="tech">Laravel</span>
-                            <span class="tech">MySQL</span>
-                            <span class="tech">REST API</span>
-                            <span class="tech">HTML/CSS/JS</span>
+                        <div class="project-footer">
+                            <div class="project-tech">
+                                <span class="tech">PHP</span>
+                                <span class="tech">Laravel</span>
+                                <span class="tech">MySQL</span>
+                                <span class="tech">REST API</span>
+                                <span class="tech">HTML/CSS/JS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://eecgroup.online/galva-max/login" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Live Demo</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay"></div>
+                        <div class="project-icon-large">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
                     <div class="project-content">
-                        <h3><a href="https://adastra-therapy.com/ar" target="_blank" rel="noopener noreferrer">Adastra System</a></h3>
-                        <p>
+                        <div class="project-header">
+                            <h3><a href="https://adastra-therapy.com/ar" target="_blank" rel="noopener noreferrer">Adastra System</a></h3>
+                            <a href="https://adastra-therapy.com/ar" target="_blank" rel="noopener noreferrer" class="project-external-link" aria-label="Visit Adastra System">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <p class="project-description">
                             Developed a multi-tenant platform for psychological treatment management, offering tools
                             for therapists, sponsors, and families, with an admin panel for users, cases, and reports.
                         </p>
@@ -359,20 +673,39 @@
                             <span class="feature">Sponsor & Family Access</span>
                             <span class="feature">Case & Session Management</span>
                         </div>
-                        <div class="project-tech">
-                            <span class="tech">PHP</span>
-                            <span class="tech">Laravel</span>
-                            <span class="tech">MySQL</span>
-                            <span class="tech">REST API</span>
-                            <span class="tech">HTML/CSS/JS</span>
+                        <div class="project-footer">
+                            <div class="project-tech">
+                                <span class="tech">PHP</span>
+                                <span class="tech">Laravel</span>
+                                <span class="tech">MySQL</span>
+                                <span class="tech">REST API</span>
+                                <span class="tech">HTML/CSS/JS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://adastra-therapy.com/ar" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Live Demo</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay"></div>
+                        <div class="project-icon-large">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                    </div>
                     <div class="project-content">
-                        <h3><a href="https://adastra-classes.com" target="_blank" rel="noopener noreferrer">Business Academy System</a></h3>
-                        <p>
+                        <div class="project-header">
+                            <h3><a href="https://adastra-classes.com" target="_blank" rel="noopener noreferrer">Business Academy System</a></h3>
+                            <a href="https://adastra-classes.com" target="_blank" rel="noopener noreferrer" class="project-external-link" aria-label="Visit Business Academy">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <p class="project-description">
                             Built a platform for managing academies, courses, instructors, and students.
                             Implemented enrollment, session purchases, and Zoom integration for online classes.
                         </p>
@@ -383,19 +716,38 @@
                             <span class="feature">Hyperpay Integration</span>
                             <span class="feature">Zoom Meetings</span>
                         </div>
-                        <div class="project-tech">
-                            <span class="tech">PHP</span>
-                            <span class="tech">Laravel</span>
-                            <span class="tech">MySQL</span>
-                            <span class="tech">HTML/CSS/JS</span>
+                        <div class="project-footer">
+                            <div class="project-tech">
+                                <span class="tech">PHP</span>
+                                <span class="tech">Laravel</span>
+                                <span class="tech">MySQL</span>
+                                <span class="tech">HTML/CSS/JS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://adastra-classes.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Live Demo</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay"></div>
+                        <div class="project-icon-large">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                    </div>
                     <div class="project-content">
-                        <h3><a href="https://setcco.com" target="_blank" rel="noopener noreferrer">Setcoo</a></h3>
-                        <p>
+                        <div class="project-header">
+                            <h3><a href="https://setcco.com" target="_blank" rel="noopener noreferrer">Setcoo</a></h3>
+                            <a href="https://setcco.com" target="_blank" rel="noopener noreferrer" class="project-external-link" aria-label="Visit Setcoo">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <p class="project-description">
                             Business website with an admin dashboard for managing services, certifications,
                             company details, customer inquiries, and content.
                         </p>
@@ -407,91 +759,20 @@
                             <span class="feature">Contact & Inquiries</span>
                             <span class="feature">Content Management</span>
                         </div>
-                        <div class="project-tech">
-                            <span class="tech">PHP</span>
-                            <span class="tech">Laravel</span>
-                            <span class="tech">Filament</span>
-                            <span class="tech">MySQL</span>
-                            <span class="tech">HTML/CSS/JS</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3><a href="#" target="_blank">Modern Invitations Platform</a></h3>
-                        <p>
-                            Built a platform for creating and customizing digital invitations for weddings,
-                            birthdays, graduations, and baby announcements. Supports text, audio, and video input
-                            and exposes APIs for mobile apps.
-                        </p>
-                        <div class="project-features">
-                            <span class="feature">Invitation Builder</span>
-                            <span class="feature">Event Templates</span>
-                            <span class="feature">Customization Tools</span>
-                            <span class="feature">Text / Audio / Video Input</span>
-                            <span class="feature">Automated Generation</span>
-                            <span class="feature">Mobile App Integration</span>
-                            <span class="feature">REST APIs</span>
-                        </div>
-                        <div class="project-tech">
-                            <span class="tech">PHP</span>
-                            <span class="tech">Laravel</span>
-                            <span class="tech">MySQL</span>
-                            <span class="tech">REST API</span>
-                            <span class="tech">HTML/CSS/JS</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3><a href="#" target="_blank">Soya7 App</a></h3>
-                        <p>
-                            Developed a travel platform that connects users, tour guides, and agencies.
-                            Users browse and book trips, agencies manage tours and bookings, and guides
-                            offer their services through the app.
-                        </p>
-                        <div class="project-features">
-                            <span class="feature">Trip Browsing & Booking</span>
-                            <span class="feature">Agency Tour Management</span>
-                            <span class="feature">Guide Assignment</span>
-                            <span class="feature">Online & Offline Guides</span>
-                            <span class="feature">User–Guide Communication</span>
-                            <span class="feature">Mobile-Ready APIs</span>
-                        </div>
-                        <div class="project-tech">
-                            <span class="tech">PHP</span>
-                            <span class="tech">Laravel</span>
-                            <span class="tech">MySQL</span>
-                            <span class="tech">REST API</span>
-                            <span class="tech">HTML/CSS/JS</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3><a href="#" target="_blank">Takaful Healthcare System</a></h3>
-                        <p>
-                            Built a healthcare management system for clinics, doctors, and pharmacies.
-                            It manages digital prescriptions, pharmacy dispensing, inventory, and staff
-                            attendance.
-                        </p>
-                        <div class="project-features">
-                            <span class="feature">Clinic Registration</span>
-                            <span class="feature">Digital Prescriptions</span>
-                            <span class="feature">Pharmacy Integration</span>
-                            <span class="feature">Medication Dispensing</span>
-                            <span class="feature">Inventory Tracking</span>
-                            <span class="feature">Attendance Management</span>
-                        </div>
-                        <div class="project-tech">
-                            <span class="tech">PHP</span>
-                            <span class="tech">Laravel</span>
-                            <span class="tech">MySQL</span>
-                            <span class="tech">REST API</span>
-                            <span class="tech">HTML/CSS/JS</span>
+                        <div class="project-footer">
+                            <div class="project-tech">
+                                <span class="tech">PHP</span>
+                                <span class="tech">Laravel</span>
+                                <span class="tech">Filament</span>
+                                <span class="tech">MySQL</span>
+                                <span class="tech">HTML/CSS/JS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://setcco.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Live Demo</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -503,7 +784,11 @@
     <!-- Education Section -->
     <section id="education" class="education">
         <div class="container">
-            <h2 class="section-title">Education & Languages</h2>
+            <div class="section-header">
+                <span class="section-tag">Education</span>
+                <h2 class="section-title">Academic Background</h2>
+                <p class="section-subtitle">My educational journey and language skills</p>
+            </div>
             <div class="education-content">
                 <div class="education-card">
                     <div class="education-icon">
@@ -512,21 +797,42 @@
                     <div class="education-details">
                         <h3>Bachelor's Degree</h3>
                         <p class="degree">Computer and Information</p>
-                        <p class="institution">Minia University, Egypt</p>
-                        <p class="period">2018 - 2022</p>
+                        <p class="institution">
+                            <i class="fas fa-university"></i>
+                            Minia University, Egypt
+                        </p>
+                        <p class="period">
+                            <i class="fas fa-calendar"></i>
+                            2018 - 2022
+                        </p>
                     </div>
                 </div>
 
                 <div class="languages-card">
-                    <h3><i class="fas fa-language"></i> Languages</h3>
+                    <div class="languages-header">
+                        <div class="languages-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h3>Languages</h3>
+                    </div>
                     <div class="language-items">
                         <div class="language-item">
-                            <span class="language-name">Arabic</span>
-                            <span class="language-level">Native (written and spoken)</span>
+                            <div class="language-info">
+                                <span class="language-name">Arabic</span>
+                                <span class="language-level">Native</span>
+                            </div>
+                            <div class="language-bar">
+                                <div class="language-progress" style="width: 100%"></div>
+                            </div>
                         </div>
                         <div class="language-item">
-                            <span class="language-name">English</span>
-                            <span class="language-level">Fluent (written and spoken)</span>
+                            <div class="language-info">
+                                <span class="language-name">English</span>
+                                <span class="language-level">Fluent</span>
+                            </div>
+                            <div class="language-bar">
+                                <div class="language-progress" style="width: 90%"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -536,38 +842,58 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
+        <div class="contact-background">
+            <div class="contact-gradient-orb orb-1"></div>
+            <div class="contact-gradient-orb orb-2"></div>
+        </div>
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <div class="section-header">
+                <span class="section-tag">Contact</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's work together on your next project</p>
+            </div>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
                             <h4>Location</h4>
                             <p>Cairo, Egypt</p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
                             <h4>Phone</h4>
-                            <p>+20 114 304 2965</p>
+                            <a href="tel:+201143042965">+20 114 304 2965</a>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
                             <h4>Email</h4>
-                            <p>samoulgerges00@gmail.com</p>
+                            <a href="mailto:samoulgerges00@gmail.com">samoulgerges00@gmail.com</a>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-globe"></i>
-                        <div>
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="contact-details">
                             <h4>Social</h4>
                             <div class="social-links">
-                                <a href="https://www.linkedin.com/in/samuelgerges10" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-                                <a href="https://github.com/SamuelGerges" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/samuelgerges10" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://github.com/SamuelGerges" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -579,10 +905,24 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Samuel Gerges. All rights reserved.</p>
+            <div class="footer-content">
+                <p>&copy; 2025 Samuel Gerges. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="portfolio.js"></script>
 </body>
 </html>
+
