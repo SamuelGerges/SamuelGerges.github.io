@@ -1,0 +1,11 @@
+# Local helper files
+extensions-list.txt
+codex.txt
+.codex
+.codex/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
